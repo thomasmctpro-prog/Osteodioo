@@ -1,0 +1,26 @@
+import { CapacitorConfig } from '@capacitor/cli';
+
+const config: CapacitorConfig = {
+  appId: 'com.osteodio.app',
+  appName: 'Osteodio',
+  webDir: 'dist',
+  server: {
+    androidScheme: 'https'
+  },
+  ios: {
+    contentInset: 'always'
+  },
+  android: {
+    allowMixedContent: true
+  },
+  plugins: {
+    SplashScreen: {
+      launchShowDuration: 3000,
+      backgroundColor: '#121212',
+      showSpinner: true,
+      spinnerColor: '#00D09C'
+    }
+  }
+};
+
+export default config;
