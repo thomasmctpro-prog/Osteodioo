@@ -13,16 +13,22 @@ export default defineConfig(({mode}) => {
     },
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '.'),
+        '@': path.resolve(__dirname, './src'),
       },
     },
     server: {
       hmr: process.env.DISABLE_HMR !== 'true',
+      watch: {
+        ignored: ['**/android/**', '**/ios/**'],
+      }
     },
     build: {
       outDir: 'dist',
       assetsDir: 'assets',
       sourcemap: false,
     },
+    optimizeDeps: {
+      exclude: ['android', 'ios']
+    }
   };
 });
